@@ -128,8 +128,7 @@ export const PollProvider: React.FC<{ children: ReactNode }> = ({
       setRemainingTime(data.poll.maxTime);
     });
 
-    // Poll results update
-    // Add console logs to track the event flow
+   
     socket.on(
       "poll:resultsUpdate",
       (data: { pollId: string; responses: Record<string, number> }) => {
@@ -429,7 +428,7 @@ socket.on("poll:end", (data: { poll: Poll }) => {
     setHasSubmitted(false);
   }
 };
-// Update the endPoll function to return a Promise
+
 const endPoll = async (pollId: string): Promise<void> => {
   if (!role || role !== "teacher") return;
 
@@ -473,8 +472,7 @@ const endPoll = async (pollId: string): Promise<void> => {
     // Emit the message via socket
     socket.emit('chat:message', message);
     
-    // // Add the message to state immediately
-    // setMessages(prev => [...prev, message]);
+    
   };
 
   const removeParticipant = async (participantId: string) => {

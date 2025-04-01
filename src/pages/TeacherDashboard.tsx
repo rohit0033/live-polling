@@ -10,7 +10,6 @@ import PollOption from "@/components/PollOption";
 import Timer from "@/components/Timer";
 import ChatBox from "@/components/ChatBox";
 
-// Define the Poll type if it's not available from context
 interface Poll {
   _id: string;
   question: string;
@@ -83,7 +82,7 @@ const TeacherDashboard: React.FC = () => {
           setUserName(teacherName);
           localStorage.setItem("pollUserName", teacherName);
         } else {
-          navigate("/"); // Navigate back if no name provided
+          navigate("/"); 
         }
       }
     }
@@ -520,7 +519,7 @@ const TeacherDashboard: React.FC = () => {
                               className="flex-1 max-w-lg bg-[#F2F2F2] text-black placeholder:black/60"
                             />
 
-                            {/* Radio buttons section WITHOUT the label (moved to header) */}
+                           
                             <div className="flex items-center justify-center gap-4 min-w-[150px]">
                               <label className="flex items-center gap-1">
                                 <input
@@ -556,7 +555,7 @@ const TeacherDashboard: React.FC = () => {
                                   checked={!correctAnswers.includes(option)}
                                   onChange={() => {
                                     if (option.trim()) {
-                                      // Remove from correct answers if it exists
+                                     
                                       setCorrectAnswers((prev) =>
                                         prev.filter((ans) => ans !== option)
                                       );

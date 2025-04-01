@@ -46,7 +46,6 @@ const PollOption: React.FC<PollOptionProps> = ({
         }}
       />
 
-      {/* Content */}
       <div className="relative flex items-center justify-between z-10">
         <div className="flex items-center gap-3">
           <div className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full

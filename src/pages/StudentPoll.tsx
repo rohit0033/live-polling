@@ -50,15 +50,13 @@ const StudentPoll: React.FC = () => {
     if (hasSubmitted) return;
     console.log("Selected option:", optionText);
 
-    // Replace this line:
-    // setSelectedOption(optionText);
-
-    // With this:
+    
+    
     if (selectedOption === optionText) {
-      // If clicking the same option again, do nothing (keep it selected)
+    
       return;
     } else {
-      // Otherwise, select only this option
+      
       setSelectedOption(optionText);
     }
   };
